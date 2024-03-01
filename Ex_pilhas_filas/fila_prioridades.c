@@ -52,23 +52,57 @@ ITEM retrieve(TFila *f) {
 }
 
 void createfp(TFilaPrio *fp) {
-	//Insira o código aqui
+	create(&fp->f1);
+    create(&fp->f2);
+    create(&fp->f3);
 }
 
 void destroyfp(TFilaPrio *fp) {
-	//Insira o código aqui
+	destroy(&fp->f1);
+    destroy(&fp->f2);
+    destroy(&fp->f3);
 }
 
 int isemptyfp(TFilaPrio *fp, int prio) {
-	//Insira o código aqui
-}
+	switch (prio) {
+        case 1:
+            return isempty(&fp->f1);
+        case 2:
+            return isempty(&fp->f2);
+        case 3:
+            return isempty(&fp->f3);
+        default:
+            abort();
+    }
+}   
 
 void storefp(TFilaPrio *fp, int prio, ITEM x) {
-	//Insira o código aqui
+	switch (prio) {
+        case 1:
+            store(&fp->f1, x);
+            break;
+        case 2:
+            store(&fp->f2, x);
+            break;
+        case 3:
+            store(&fp->f3, x);
+            break;
+        default:
+            abort();
+    }
 }
 
 ITEM retrievefp(TFilaPrio *fp, int prio) {
-	//Insira o código aqui
+	switch (prio) {
+        case 1:
+            return retrieve(&fp->f1);
+        case 2:
+            return retrieve(&fp->f2);
+        case 3:
+            return retrieve(&fp->f3);
+        default:
+            abort();
+    }
 }
 
 void preenche(TFilaPrio *fp) {
