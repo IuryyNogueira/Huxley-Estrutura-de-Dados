@@ -126,21 +126,26 @@ void result(STACK* stack, char elementos){
             break;
     }
 }
-// "51 13 12 * + "
+/*  51 
+    13 
+    12 
+    * 
+    +  */
 void Calculadora(STACK* calculadora, int size){
     
-    char elementos[100];
-   
     for(int i = 0; i < size; i++){
-        scanf("%s", elementos);
+        char elemento[100];
 
-        for(int j = 0; j < strlen(elementos); j++){
-            if(elementos[j] >= '0' && elementos[j] <= '9'){
-                int num = elementos[j] - '0';
-                PUSH(calculadora, num);
-            }else{
-                result(calculadora, elementos[j]);
-            }
+        scanf("%s", elemento);
+
+        if(elemento[0] == '+' || elemento[0] == '-' || elemento[0] == '/' || elemento[0] == '*')
+        {
+            result(calculadora,elemento[0]);
+        }
+        else
+        {
+            int item = atoi(elemento);
+            PUSH(calculadora,item);
         }
     }
 }
