@@ -6,7 +6,4 @@
 
 ✔  Exercícios - **Pilhas e Filas**
 
-**Em andamento...**
-
-* Exercícios - **Hash, Grafos e Árvores**
-
+✔  Exercícios - **Hash, Grafos e Árvores**
